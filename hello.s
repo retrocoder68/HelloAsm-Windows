@@ -1,11 +1,11 @@
-; Copyright (C) 2023 Skywalker <j.karlsson@retrocoder.se>
+# Copyright (C) 2023 Skywalker <j.karlsson@retrocoder.se>
 
-global _start
+.global _start
 
-; Windows system symbols
-extern ExitProcess
+# Windows system symbols
+.extern ExitProcess
 
-section .text
+.section .text
 
 _start:
 	call _main
@@ -16,7 +16,7 @@ _main:
 	ret
 
 _exit:
-	mov rcx, 0
+	movq $0, %rcx
 	call ExitProcess
 	ret
 
